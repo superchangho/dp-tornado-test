@@ -189,7 +189,7 @@ class ModelSingleton(dpEngine, dpSingleton):
                 'pool_recycle': conf.pool_recycle if conf.pool_recycle is not None else 3600,
                 'max_overflow': conf.max_overflow if conf.max_overflow is not None else -1,
                 'pool_timeout': conf.pool_timeout if conf.pool_timeout is not None else 30
-                # 'connect_args': connection_args
+                # 'connect_args': connection_args superchangho
             }
 
             if conf.isolation_level is not None:
