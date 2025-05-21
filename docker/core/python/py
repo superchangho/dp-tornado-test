@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ "$pyver_m" = "" ]
+then
+  echo "No python version specified."
+  exit 1
+fi
+
+if [ -d /data/python ]
+then
+  return
+fi
+
+mkdir -p /data/python
+cd /data/python
+
+wget https://www.python.org/ftp/python/$pyver/Python-$pyver.tgz
+tar -xzvf Python-$pyver.tgz
+rm -rf Python-$pyver.tgz
+cd Python-$pyver
+
+./configure
+make altinstall
+cd /data
+rm -rf /data/python
+
+wget https://bootstrap.pypa.io/get-pip.py
+python$pyver_m get-pip.py
+rm get-pip.py
+
+ln -s $(which python$pyver_m) /usr/bin/dp-python
+ln -s $(which pip$pyver_m) /usr/bin/dp-pip
+

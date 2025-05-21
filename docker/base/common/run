@@ -1,0 +1,8 @@
+#!/bin/bash
+
+/data/script/common/start
+
+while :
+do
+  sleep 100000
+done

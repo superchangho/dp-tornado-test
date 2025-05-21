@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pyver=$1
+
+bash build_docker $pyver dp4p:base-$pyver

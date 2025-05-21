@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir -p /data/dp
+echo "$dp_port" > /data/dp/port
+echo "20170820140000-$pyver" > /data/dp/version
